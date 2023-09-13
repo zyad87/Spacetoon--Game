@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Tajawal', sans-serif;
+}
+.control-buttons{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(32, 34, 95, 0.9);
+}
+.control-buttons span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #0e0f2a;
+    background-color: #E1C61D;
+    padding: 15px 25px;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 3px solid #0e0f2a;
+    cursor: pointer;
+}
+.control-buttons span:hover{
+    transition: all 0.3s;
+    color: #E1C61D;
+    background-color: #0e0f2a;
+
+}
+.control-buttons span:active{
+    border: 3px solid #09091a;
+    background-color: #09091a;
+
+}
+.info-container{
+    width: 1080px;
+    margin: 20px auto 0;
+    background-color: aliceblue;
+    padding: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    border: 2px solid #20225F;
+}
+.info-container .tries{
+    float: left;
+    width: 50%;
+}
+.info-container .tries span{
+    transition: color 1s ;
+}
+.info-container .name{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.spacetoon-game-blocks{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+.spacetoon-game-blocks.no-clicking{
+    pointer-events: none;
+}
+.spacetoon-game-blocks .game-block{
+    height: 200px;
+    transition: transform 0.5s;
+    transform-style:preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+}
+
+.spacetoon-game-blocks .game-block .front{
+    background-color: #0e0f2a;
+    line-height: 200px;
+}
+.spacetoon-game-blocks .game-block .front:hover{
+    background-color: #E1C61D;
+    transition: 0.3s  background-color;
+
+}
+.spacetoon-game-blocks .game-block .front::before{
+    content: url(img/Spacetoon_log.png);
+    text-align: center;
+}
+.spacetoon-game-blocks .game-block .back{
+    background-color: #fff;
+    transform: rotateY(180deg);
+}
+.spacetoon-game-blocks .game-block .back img{
+    width: 160px;
+    height: 160px;
+    margin-top: 20px;
+
+}
+.spacetoon-game-blocks .game-block .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 3px solid #E1C61D;
+}
+.spacetoon-game-blocks .game-block.is-flipped,.spacetoon-game-blocks .game-block.has-match{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    
+}
